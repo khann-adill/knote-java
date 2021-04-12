@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: knote
+  annotations:
+    fluxcd.io/tag.app: semver:~1.0
+    fluxcd.io/automated: "true"
 spec:
   replicas: 1
   selector:
