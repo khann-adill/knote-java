@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: mak1806/knote-java:1.1
+        image: mak1806/knote-java:1.2
         ports:
         - containerPort: 8080
         env:
