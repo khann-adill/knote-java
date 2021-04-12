@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,14 +17,14 @@ spec:
         app: knote
     spec:
       containers:
-        - name: app
-          image: mak1806/knote-java:1.0
-          ports:
-            - containerPort: 8080
-          env:
-            - name: MONGO_URL
-              value: mongodb://mongo:27017/dev
-          imagePullPolicy: Always
+      - name: app
+        image: mak1806/knote-java:1.1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MONGO_URL
+          value: mongodb://mongo:27017/dev
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
@@ -33,6 +34,6 @@ spec:
   selector:
     app: knote
   ports:
-    - port: 80
-      targetPort: 8080
+  - port: 80
+    targetPort: 8080
   type: NodePort
