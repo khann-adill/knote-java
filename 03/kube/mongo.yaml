@@ -24,6 +24,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo
+  annotations:
+    fluxcd.io/tag.mongo: semver:~1.0
+    fluxcd.io/automated: "true"
 spec:
   selector:
     matchLabels:
